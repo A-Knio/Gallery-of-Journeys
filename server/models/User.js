@@ -21,6 +21,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+
     // set savedPhotos to be an array of data that adheres to the photoSchema
     myPhotos: [photoSchema],
   
