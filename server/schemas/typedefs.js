@@ -1,26 +1,23 @@
-const typeDefs = gql`
+const typeDefs = `
     type User {
      _id: ID!
-     firstName: String!
-     lastName: String
+     username: String!
      email: String!
      password: String!
-     photos: [Photo]
+     myPhotos: [Photo]
     }
 
     type Photo {
      _id: ID!
      title: String
      description: String
-     location: String
-     url: [String]
-    }
-
-    type File {
-     filename: String!
-     mimetype: String!
-     encoding: String!
-     path: String!   
+     image: String
+     link: String
+     purchased: Boolean
+     favorited: Boolean
+     sold: Boolean
+     data: Buffer
+     contentType: String
     }
 
     type Auth {
@@ -30,30 +27,30 @@ const typeDefs = gql`
 
     input UserInput {
      _id: ID!
-     firstName: String!
-     lastName: String
+     username: String!
      email: String!
      password: String!
     }
 
     input PhotoInput {
-      _id: ID!
-      title: String
+     _id: ID!
+     title: String
      description: String
-     location: String
-     url: [String] 
+     data: Buffer!
+     contentType: String!
     }
 
     type Query {
       users: [User]
-      user(firstName: String, lastName: String): User
+      user(username: String): User
       me: User
+      photos: [Photos!]!
 
     }
 
     type Mutation {
-        uploadFile(file: Upload!): File!
-        addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+        uploadPhoto(name: String!, description: String, data: String!, contentType: String!): Image!
+        addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         removePhoto(photoId: ID!): Photo
       }

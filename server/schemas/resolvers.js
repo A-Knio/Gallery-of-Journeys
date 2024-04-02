@@ -1,4 +1,4 @@
-const { User, Photo, File } = require('../models');
+const { User, Photo } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -14,6 +14,9 @@ const resolvers = {
                 return User.findOne({ _id: context.user._id }).populate('photos');
             }
             throw new AuthenticationError('You need to be logged in!');
+        },
+        photos: async () => {
+            return await Photo.find();
         },
     },
     Mutation: {
@@ -39,19 +42,22 @@ const resolvers = {
 
             return { token, user };
         },
-        uploadFile: async (_, { file }) => {
-            const { createReadStream, filename, mimetype, encoding } = await file;
-            const stream = createReadStream();
-            // filepath probably needs to be changed.
-            const filePath = path.join(__dirname, `./photos/${filename}`);
-            await stream.pipe(fs.createWriteStream(filePath));
-            return { filename, mimetype, encoding, path: filePath };
-        },
+        uploadPhoto: async (_, { title, description, data, contentType }) => {
+            const buffer = Buffer.from(data.split(',')[1], 'base64');
+            const newPhoto = new Photo({
+              title,
+              description,
+              data: buffer,
+              contentType
+            });
+            await newPhoto.save();
+            return newPhoto;
+          },
         removePhoto: async (parent, { photoID }, context) => {
             if (context.user) {
               const photo = await Photo.findOneAndDelete({
                 _id: photoID,
-                photographer: context.user.username,
+                username: context.user.username,
               });
       
               await User.findOneAndUpdate(
@@ -59,7 +65,7 @@ const resolvers = {
                 { $pull: { photos: photo._id } }
               );
       
-              return thought;
+              return photo;
             }
             throw AuthenticationError;
           },
