@@ -13,6 +13,15 @@ const photoSchema = new Schema({
     image: {
       type: String,
     },
+    data: {
+      type: Buffer,
+    },
+   contentType: {
+      type: String,
+    },
+    name: {
+      type: String,
+    },
     link: {
       type: String,
     },
