@@ -2,21 +2,22 @@
     "users": [
         {
             "id": 1,
-            "name": "John Doe",
+            "username": "John Doe",
             "email": "johndoe@example.com",
-            "age": 25
+            "Password": "123456"
         },
         {
             "id": 2,
-            "name": "Jane Smith",
+            "username": "Jane Smith",
             "email": "janesmith@example.com",
-            "age": 30
+            "Password": "123456"
         },
+
         {
             "id": 3,
-            "name": "Alice Johnson",
+            "username": "Alice Johnson",
             "email": "alicejohnson@example.com",
-            "age": 28
+            "Password": "123456"
         }
     ]
 }
