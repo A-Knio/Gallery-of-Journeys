@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom/client';
 import Subscription from "./pages/subscription";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
@@ -7,6 +8,7 @@ import App from "./App";
 
 const router = createBrowserRouter([
     {
+
       path: '/',
       element: <App />,
       children: [
@@ -27,4 +29,5 @@ const router = createBrowserRouter([
   ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   );
+
 
