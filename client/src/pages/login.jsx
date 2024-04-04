@@ -26,8 +26,8 @@ const Login = () => {
                                 <span className="text-gray-400"> Want to be a member?  </span>
                                 <Link to='/signup'> Click Here to Join</Link>
                                 </p>
-                </form>
-                </div>
+                            </form>
+                        </div>
                 </div>
             </div>
         </div>
