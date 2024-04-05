@@ -2,9 +2,9 @@ import ReactDOM from 'react-dom/client';
 import Subscription from "./pages/subscription";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
-import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from "./App";
+import '/src/style.css';
 
 const router = createBrowserRouter([
     {
