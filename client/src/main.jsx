@@ -5,6 +5,7 @@ import Signup from "./pages/signup";
 import Profile from './pages/profile';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from "./App";
+import '/src/style.css';
 
 const router = createBrowserRouter([
     {
