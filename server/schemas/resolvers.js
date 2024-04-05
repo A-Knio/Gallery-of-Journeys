@@ -6,8 +6,8 @@ const resolvers = {
         users: async () => {
             return User.find();
         },
-        user: async (parent, { firstName, lastName }) => {
-            return User.findOne({ firstName, lastName }).populate('photos')
+        user: async (parent, { username }) => {
+            return User.findOne({ username }).populate('photos')
         },
         me: async (parent, args, context) => {
             if (context.user) {
@@ -15,9 +15,9 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        photos: async () => {
-            return await Photo.find();
-        },
+        allPhotos: async () => {
+            return Photo.find();
+        }
     },
     Mutation: {
         addUser: async (parent, { firstName, lastName,  email, password }) => {
