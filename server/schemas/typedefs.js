@@ -16,7 +16,6 @@ const typeDefs = `
      purchased: Boolean
      favorited: Boolean
      sold: Boolean
-     data: Buffer
      contentType: String
     }
 
@@ -36,7 +35,7 @@ const typeDefs = `
      _id: ID!
      title: String
      description: String
-     data: Buffer!
+     image: String
      contentType: String!
     }
 
@@ -44,12 +43,12 @@ const typeDefs = `
       users: [User]
       user(username: String): User
       me: User
-      photos: [Photos!]!
-
+      photos: [Photo!]!
+      allPhotos: [Photo!]!
     }
 
     type Mutation {
-        uploadPhoto(name: String!, description: String, data: String!, contentType: String!): Image!
+        uploadPhoto(name: String!, description: String, data: String!, contentType: String!): Photo!
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         removePhoto(photoId: ID!): Photo
