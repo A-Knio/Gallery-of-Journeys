@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     {
 
       path: '/',
-      element: Auth.loggedIn() ? <Navigate to='/Profile' replace='true'/> : <App />,
+      element: Auth.loggedIn() ? <Navigate to='/profile' replace='true'/> : <App />,
       children: [
         {
           index: true, 
@@ -24,11 +24,12 @@ const router = createBrowserRouter([
           path: '/profile',
           element: Auth.loggedIn() ? (
             Auth.hasUser() ? (
-              Auth.hasPhoto() ? (
-                <Profile />
-              ) : (
-                <Navigate to="/subscribe" />
-              )
+              <Profile />
+              // Auth.hasPhoto() ? (
+              //   <Profile />
+              // ) : (
+              //   <Navigate to="/subscribe" />
+              // )
             ) : (
               <Navigate to="/login" />
             )
