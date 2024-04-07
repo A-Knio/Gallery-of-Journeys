@@ -31,15 +31,7 @@ const Profile = () => {
           <h5>Personal Info</h5>
         </div>
         <div className="card-body">
-          <p>Name: {user.firstName} {user.lastName}</p>
-          <p>Phone: {user.phone}</p>
-          <p>Address: {user.userAddress ? (
-            `${user.userAddress.street1}\n`
-            `${user.userAddress?.street2}\n`
-            `${user.userAddress?.city}, ${user.userAddress.state} ${user.userAddress.zip}`
-          ) : (
-            <em>edit profile to add Address</em>
-          )}</p>
+          <p>Name: {user.username} </p>
         </div>
       </div>
     </div>
