@@ -16,14 +16,7 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
-// import Landingpage from './pages/landingpage';
-// import Topbar from './components/topbar';
-// import Navbar from './components/navbar';
-// import Hero from './components/hero';
-// import Homegallery from './components/homegallery';
-// import FeaturesSection from './components/features';
-// import Gallery from './components/gallery';
-// import Footer from './components/footer';
+
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
