@@ -56,7 +56,6 @@ export const QUERY_ALLPHOTOS = gql`
             sold
             data
             contentType
-          }
         }
     }`;
 
