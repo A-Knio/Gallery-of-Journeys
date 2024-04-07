@@ -16,7 +16,7 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
-import Landingpage from './pages/landingpage';
+// import Landingpage from './pages/landingpage';
 // import Topbar from './components/topbar';
 // import Navbar from './components/navbar';
 // import Hero from './components/hero';
@@ -40,7 +40,7 @@ function App() {
         <FeaturesSection />
         <Gallery />
         <Footer /> */}
-        <Landingpage />
+        {/* <Landingpage /> */}
         <Outlet />
       </div>
     </ApolloProvider>

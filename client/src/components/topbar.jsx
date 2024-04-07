@@ -4,7 +4,7 @@ import {AiFillPhone, AiOutlineClockCircle} from 'react-icons/ai';
 import Logo from "../images/gjlogo.svg";
 
 
-const topbar = () => {
+const Topbar = () => {
   return (
     <div className='flex max-h-14 justify-between items-center px-4'>
         <div className='flex items-center'>
@@ -28,4 +28,4 @@ const topbar = () => {
   )
 }
 
-export default topbar
+export default Topbar;

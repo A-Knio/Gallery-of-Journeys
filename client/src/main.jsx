@@ -4,6 +4,7 @@ import Subscription from "./pages/subscription";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Profile from './pages/profile';
+import Signupform from './components/signupform';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from "./App";
 import '/src/style.css';
@@ -39,7 +40,8 @@ const router = createBrowserRouter([
        {
           path: '/login',
           element: <Login />
-        }, {
+        },
+{
           path: '/signup',
           element: <Signup />
         },{

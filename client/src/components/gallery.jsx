@@ -1,6 +1,6 @@
 import React from 'react'
 
-const gallery = () => {
+const Gallery = () => {
   return (
     <div id='gallery' className='max-w-[1140px] m-auto w-full px-4 py-16'>
         <h2 className=' text-3xl font-bold text-center text-gray-900 p-4 text-'>G a l l e r y</h2>
@@ -25,4 +25,4 @@ const gallery = () => {
   )
 }
 
-export default gallery
+export default Gallery

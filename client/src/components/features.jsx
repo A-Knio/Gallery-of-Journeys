@@ -1,7 +1,7 @@
 import React from 'react';
-import { AiOutlineVideoCamera, AiOutlineSearch, AiOutlineDollarCircle, AiOutlineSafetyCertificate, AiOutlineMan, AiOutlineHome } from 'react-icons/ai';
+import { AiOutlineVideoCamera,  AiOutlineSearch, AiOutlineDollarCircle, AiOutlineSafetyCertificate, AiOutlineMan, AiOutlineHome } from 'react-icons/ai';
 
-const FeaturesSection = () => {
+const Features = () => {
   return (
     <div className="ml-20 flex flex-wrap items-center justify-center mt-4">
       {/* Text Section */}
@@ -55,5 +55,5 @@ const FeaturesSection = () => {
   );
 };
 
-export default FeaturesSection;
+export default Features;
 

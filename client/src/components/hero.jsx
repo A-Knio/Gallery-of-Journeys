@@ -2,7 +2,7 @@ import React from 'react'
 import Bg from '../images/lpbg.svg'
 import Typewriter from "typewriter-effect";
 
-const hero = () => {
+const Hero = () => {
   return (
     <div className='w-full h-[90vh]'>
     <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExejd6NnNwdm0zOGhvZ3l2bm15bGs2dTY5dzI4a2Y4M2hmZXRobGl2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vQXKPdzpShJtTCE/giphy.gif" alt="Background" 
@@ -35,4 +35,4 @@ const hero = () => {
   )
 }
 
-export default hero
+export default Hero

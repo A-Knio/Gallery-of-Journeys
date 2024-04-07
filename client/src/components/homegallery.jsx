@@ -1,6 +1,6 @@
 import React from 'react'
 
-const homegallery = () => {
+const HomeGallery = () => {
   return (
     <div className='max-w-[1140px] m-auto w-full md:flex mt-[-75px]'>
         <div className='relative p-4'>
@@ -20,4 +20,4 @@ const homegallery = () => {
   )
 }
 
-export default homegallery
+export default HomeGallery

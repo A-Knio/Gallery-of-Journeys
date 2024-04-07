@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Logo from "../images/gjlogo.svg";
 import { FaFacebookF, FaTwitter, FaGooglePlusG, FaInstagram, FaBars, } from 'react-icons/fa';
 
-const navbar = () => {
+const Navbar = () => {
 const [nav, setNav] = useState(false)
 
 const handleNav = () => {
@@ -60,4 +60,4 @@ const handleNav = () => {
   )
 }
 
-export default navbar;
+export default Navbar;

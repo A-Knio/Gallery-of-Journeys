@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from "../images/gjlogo.svg";
 
-const footer = () => {
+const Footer = () => {
   return (
     <div className='max-w-[1140px] w-full py-8 m-auto border-t-4'>
         <div className=' flex items-center m-auto justify-center'>
@@ -18,4 +18,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer

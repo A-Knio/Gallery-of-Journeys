@@ -1,29 +1,31 @@
 import React from 'react';
-import Topbar from './components/topbar';
-import Navbar from './components/navbar';
-import Hero from './components/hero';
-import Homegallery from './components/homegallery';
-import FeaturesSection from './components/features';
-import Gallery from './components/gallery';
-import Footer from './components/footer';
+import Topbar from '../components/topbar';
+import Navbar from '../components/navbar';
+import Hero from '../components/hero';
+import HomeGallery from '../components/homegallery';
+import Features from '../components/features';
+import Gallery from '../components/gallery';
+import Footer from '../components/footer';
+import { Outlet } from 'react-router-dom';
 
-const landingpage = () => {
+
+const Landingpage = () => {
     return (
 <div className='container'>
 <Topbar />
 <Navbar />
 <Hero />
-<Homegallery />
-<FeaturesSection />
+<HomeGallery />
+<Features />
 <Gallery />
 <Footer />
 <Outlet />
 </div>
 
 )
-}
+};
 
-export default landingpage
+export default Landingpage;
 
 // import React from 'react'
 
