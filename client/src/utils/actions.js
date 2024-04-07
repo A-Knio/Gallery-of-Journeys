@@ -1,0 +1,2 @@
+export const UPDATE_PHOTOS = 'UPDATE_PHOTOS';
+export const UPDATE_USER = 'UPDATE_USER';
