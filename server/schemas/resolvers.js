@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 const { User, Photo } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
@@ -76,4 +74,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
->>>>>>> 69a16eb050ca758c8dcc87aa4e5b461330bb3b1d
