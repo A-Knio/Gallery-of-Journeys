@@ -1,14 +1,14 @@
 const db = require ('../config/connection');
-const { Gallery } = require ('../models');
+const { User } = require ('../models');
 const cleanDB = require ('./cleanDB');
 
-const galleryData = require ('./galleryData.json');
+const userData = require ('./userData.json');
 
 db.once ('open', async () => {
-    await cleanDB ('Gallery', 'galleries');
+    await cleanDB ('User', 'users');
     
-    await Gallery.insertMany (galleryData);
+    await User.insertMany (userData);
     
-    console.log ('Galleries seeded!');
+    console.log ('Users seeded!');
     process.exit (0);
     });
