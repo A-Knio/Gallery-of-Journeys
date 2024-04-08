@@ -71,9 +71,7 @@ function Signup(props) {
                    
                         <button 
                             className="bg-gray-900 py-3 my-6 rounded font-semibold" 
-                            type="submit"> 
-
-                            Sign Up  
+                            type="submit"> Sign Up  
                             </button>
                         <p className="py-8">
                             <span className="text-gray-400"> Already a member?  </span>
