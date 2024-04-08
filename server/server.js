@@ -9,9 +9,7 @@ const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-
-const upload = multer();
-
+const upload = multer({ dest: './public/photos'});
 const server = new ApolloServer({
   typeDefs,
   resolvers,
