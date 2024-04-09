@@ -19,6 +19,11 @@ const photoSchema = new Schema({
       type: String,
       required: true,
     },
+    user: {
+      type: Types.ObjectId,
+      ref: 'User',
+      required: true
+  },
     purchased: {
         type: Boolean,
         default: false,
