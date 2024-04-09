@@ -32,20 +32,16 @@ export const LOGIN = gql`
 
 export const UPLOAD_PHOTO = gql`
   mutation uploadPhoto(
-    $title: String!
-    $description: String!
-    $image: Upload!
-    $link: String!
-    $data: String!
+    $description: String
+    $image: String!
     $contentType: String!
+    $title: String!
   ) {
     uploadPhoto(
-      title: $title
       description: $description
       image: $image
-      link: $link
-      data: $data
       contentType: $contentType
+      title: $title
     ) {
       _id
       title
@@ -55,6 +51,7 @@ export const UPLOAD_PHOTO = gql`
     }
   }
 `;
+
 
 export const REMOVE_PHOTO = gql`
     mutation removePhoto($photoId: ID!) {
