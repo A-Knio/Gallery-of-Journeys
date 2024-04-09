@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // import schema from Photo.js
-const photoSchema = require('./Photo');
+const Photo = require('./Photo');
 
 const userSchema = new Schema(
   {
@@ -25,7 +25,7 @@ const userSchema = new Schema(
       type: String,
       default: ''
     },  
-    myPhotos: [photoSchema],
+    myPhotos: [Photo],
   },
    {
     toJSON: {
