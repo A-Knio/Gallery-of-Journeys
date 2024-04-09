@@ -1,5 +1,5 @@
 const customFetch = axios.create({
-    baseURL: "http://localhost:3002/api/",
+    baseURL: "http://localhost:3000/api/",
     headers: {
       "Content-type": "application/json",
     },

@@ -3,14 +3,14 @@ import Landingpage from './pages/landingpage';
 import Explore from './pages/explore';
 import Subscription from "./pages/subscription";
 import Login from "./pages/login";
-import EditProfile from './pages/profile';
+import EditProfile from './components/editprofile';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from "./App";
 import '/src/style.css';
 import Auth from './utils/auth';
 import { Navigate } from 'react-router';
 import Signupform from './components/signupform';
-
+import Profile from './pages/profile';
 const router = createBrowserRouter([
     {
 
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         },
         {
           path: '/profile',
+          element: <Profile />
+        },
+        {
+          path: '/editprofile',
           element: Auth.loggedIn() ? (
             // Auth.hasUser() ? (
               <EditProfile />

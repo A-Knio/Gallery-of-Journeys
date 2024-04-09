@@ -1,5 +1,4 @@
 import React from 'react'
-import Bg from '../images/lpbg.svg'
 import Typewriter from "typewriter-effect";
 
 const Hero = () => {

@@ -4,6 +4,7 @@ const typeDefs = `
      username: String!
      email: String!
      password: String!
+     bio: String!
      myPhotos: [Photo]
     }
 
@@ -26,9 +27,11 @@ const typeDefs = `
 
     input UserInput {
      _id: ID!
+
      username: String!
      email: String!
      password: String!
+     bio: String!
     }
 
     input PhotoInput {
@@ -42,13 +45,14 @@ const typeDefs = `
     type Query {
       users: [User]
       user(username: String): User
+      bio: User 
       me: User
       photos: [Photo!]!
       allPhotos: [Photo!]!
     }
 
     type Mutation {
-      updateBio(bio: String!): User!
+      updateBio(_id: ID!, bio: String!): User
       uploadPhoto(description: String, image: String!, contentType: String!, title: String!): Photo!
       addUser(username: String!, email: String!, password: String!): Auth
       login(email: String!, password: String!): Auth
