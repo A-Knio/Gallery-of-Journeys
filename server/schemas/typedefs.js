@@ -48,11 +48,12 @@ const typeDefs = `
     }
 
     type Mutation {
-        uploadPhoto(name: String!, description: String, data: String!, contentType: String!): Photo!
-        addUser(username: String!, email: String!, password: String!): Auth
-        login(email: String!, password: String!): Auth
-        removePhoto(photoId: ID!): Photo
-      }
+      updateBio(bio: String!): User!
+      uploadPhoto(description: String, image: String!, contentType: String!, title: String!): Photo!
+      addUser(username: String!, email: String!, password: String!): Auth
+      login(email: String!, password: String!): Auth
+      removePhoto(photoId: ID!): Photo
+    }
 `;
 
 module.exports = typeDefs;
