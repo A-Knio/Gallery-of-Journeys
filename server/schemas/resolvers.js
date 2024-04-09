@@ -44,15 +44,18 @@ const resolvers = {
 
             return { token, user };
         },
-        uploadPhoto: async (_, { description, image, contentType, title }) => {
+        uploadPhoto: async (_, { description, image, contentType, title }, {user}) => {
             const buffer = Buffer.from(image.split(',')[1], 'base64');
             const newPhoto = new Photo({
               description,
               image: buffer,
               contentType,
-              title
+              title,
+              user: user.id
             });
             await newPhoto.save();
+
+            await User.findByIdAndUpdate(user.id, { $push: { myPhotos: newPhoto.id } });
             return newPhoto;
         },
         removePhoto: async (parent, { photoID }, context) => {
@@ -71,7 +74,20 @@ const resolvers = {
             }
             throw AuthenticationError;
           },
-    }
-};
+          updateBio: async (_, { bio }, { user }) => {
+            if (!user) {
+              throw new Error('User not authenticated!');
+            }
+    
+            const updatedUser = await User.findByIdAndUpdate(
+              user._id,
+              { bio },
+              { new: true }
+            );
+            return updatedUser;
+          }
+        }
+    };
+
 
 module.exports = resolvers;

@@ -59,5 +59,16 @@ export const REMOVE_PHOTO = gql`
             _id
         }
     }
-    `;
+`;
+
+export const UPDATE_BIO = gql`
+  mutation UpdateBio($bio: String!) {
+    updateBio(bio: $bio) {
+      _id
+      username
+      email
+      bio
+    }
+  }
+`;
 
