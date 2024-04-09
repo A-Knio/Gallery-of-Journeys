@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { UPLOAD_PHOTO, REMOVE_PHOTO } from '../utils/mutations';
 import PhotoGallery from './photogallery';
+import Topbar from './topbar';
+import Navbar from './navbar';
+
 const convertImageToBase64 = async (file) => {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -77,7 +80,12 @@ const PhotoForm = () => {
     };
 
     return (
-        <div className="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg p-6">
+        <div className='w-full '>
+             <Topbar />
+            <Navbar />
+        
+        <div className="max-w-md mt-20 mx-auto bg-white rounded-lg overflow-hidden shadow-lg p-6">
+        
             <label htmlFor="formFile" className="block text-sm font-medium text-gray-700 mb-2">
                 Add your photo
             </label>
@@ -102,6 +110,7 @@ const PhotoForm = () => {
                 Delete
             </button>
             <PhotoGallery photos={uploadedPhotos} />
+        </div>
         </div>
     );
 };
