@@ -18,7 +18,7 @@ const handleNav = () => {
                <a href="#gallery">Gallery</a> 
             </li>
             <li className='mx-4'>
-               <a href="/profile">Profile</a> 
+               <a href="/editprofile">Profile</a> 
             </li>
             <li className='mx-4'>
                <a href="/explore">Explore</a> 

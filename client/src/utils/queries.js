@@ -26,6 +26,7 @@ export const QUERY_USER = gql`
         user(_id: _id) {
             _id
             username
+            bio
             email
             myPhotos {
                 _id
@@ -65,6 +66,7 @@ query Query {
       _id
       username
       email
+      bio
       myPhotos {
         _id
         contentType

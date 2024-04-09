@@ -62,11 +62,10 @@ export const REMOVE_PHOTO = gql`
 `;
 
 export const UPDATE_BIO = gql`
-  mutation UpdateBio($bio: String!) {
-    updateBio(bio: $bio) {
+  mutation UpdateBio($id: ID!, $bio: String!) {
+    updateBio(_id: $id, bio: $bio) {
       _id
       username
-      email
       bio
     }
   }

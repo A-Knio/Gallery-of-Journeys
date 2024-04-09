@@ -74,18 +74,21 @@ const resolvers = {
             }
             throw AuthenticationError;
           },
-          updateBio: async (_, { bio }, { user }) => {
-            if (!user) {
-              throw new Error('User not authenticated!');
-            }
-    
+          updateBio: async (parent, { bio }, context) => {
+            const userId = context.body.variables.id
+            if (userId) {
             const updatedUser = await User.findByIdAndUpdate(
-              user._id,
-              { bio },
+              { _id: userId },
+              { bio: bio },
               { new: true }
-            );
-            return updatedUser;
+              );
+
+              return updatedUser;
+    
           }
+
+            throw new Error('User not found!');
+        }
         }
     };
 
