@@ -44,17 +44,17 @@ const resolvers = {
 
             return { token, user };
         },
-        uploadPhoto: async (_, { title, description, data, contentType }) => {
-            const buffer = Buffer.from(data.split(',')[1], 'base64');
+        uploadPhoto: async (_, { description, image, contentType, title }) => {
+            const buffer = Buffer.from(image.split(',')[1], 'base64');
             const newPhoto = new Photo({
-              title,
               description,
-              data: buffer,
-              contentType
+              image: buffer,
+              contentType,
+              title
             });
             await newPhoto.save();
             return newPhoto;
-          },
+        },
         removePhoto: async (parent, { photoID }, context) => {
             if (context.user) {
               const photo = await Photo.findOneAndDelete({
