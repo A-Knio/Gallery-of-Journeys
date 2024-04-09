@@ -9,11 +9,16 @@ const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const upload = multer({ dest: './public/photos'});
+const upload = multer({ 
+  dest: './public/photos',
+limits: { fileSize: 100000000 } // Maximum file size in bytes
+});
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  uploads: { maxFileSize: 100000000 }
 });
+const bodyParser = require('body-parser');
 
 // app.use(upload.single('file'));
 
@@ -21,8 +26,8 @@ const server = new ApolloServer({
 const startApolloServer = async () => {
   await server.start();
 
-  app.use(express.urlencoded({ extended: false }));
-  app.use(express.json());
+  app.use(express.urlencoded({ limit: '10mb', extended: true }));
+  app.use(express.json({limit: '10mb', extended: true}));
 
   app.use('/graphql', expressMiddleware(server, {
     context: authMiddleware
@@ -35,6 +40,8 @@ const startApolloServer = async () => {
       res.sendFile(path.join(__dirname, '../client/dist/index.html'));
     });
   }
+  app.use(bodyParser.json({limit: '10mb', extended: true }));
+  app.use(bodyParser.urlencoded({limit: '10mb', extended: true }));
 
   db.once('open', () => {
     app.listen(PORT, () => {

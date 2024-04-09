@@ -1,4 +1,6 @@
-const { Schema, Types } = require('mongoose');
+// const { Schema, Types, model } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema } = mongoose 
 
 // This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedPhotos` array in User.js
 const photoSchema = new Schema({
@@ -21,7 +23,7 @@ const photoSchema = new Schema({
       required: true,
     },
     user: {
-      type: Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: 'User',
       required: true
   },
@@ -42,5 +44,6 @@ const photoSchema = new Schema({
     },
    
   });
+const Photo = mongoose.model('Photo', photoSchema);
  
-  module.exports = photoSchema;
+  module.exports = Photo;

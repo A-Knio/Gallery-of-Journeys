@@ -11,6 +11,8 @@ import Auth from './utils/auth';
 import { Navigate } from 'react-router';
 import Signupform from './components/signupform';
 import Profile from './pages/profile';
+import PhotoForm from './components/photoform';
+import PhotoGallery from './components/photogallery';
 const router = createBrowserRouter([
     {
 
@@ -51,7 +53,16 @@ const router = createBrowserRouter([
        {
           path: '/login',
           element: <Login />
-        }, {
+        }, 
+        {
+          path: '/photoform',
+          element: <PhotoForm />
+        },
+        {
+          path: '/photogallery',
+          element: <PhotoGallery />
+        },
+        {
           path: '/signupform',
           element: <Signupform/>
         },{

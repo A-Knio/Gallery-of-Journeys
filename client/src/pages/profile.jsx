@@ -20,18 +20,13 @@ const Profile = () => {
 
     return (
         <div className="container mx-auto p-4">
-            <div className="max-w-lg mx-auto">
+            <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
                 <h2 className="text-3xl font-semibold mb-4">Profile</h2>
                 <div className="mb-4">
                     <h3 className="text-xl font-semibold mb-2">Username:</h3>
                     <p className="text-gray-700">{user.username}</p>
                 </div>
-                <div className="mb-4">
-                    <h3 className="text-xl font-semibold mb-2">Photo Gallery:</h3>
-                    {/* You can add your photo gallery component here */}
-                    {/* Example: <PhotoGallery /> */}
-                </div>
-                <Link to="/edit-profile" className="text-blue-500 hover:underline">Edit Profile</Link>
+                <Link to="/editprofile" className="text-blue-500 hover:underline">Edit Profile</Link>
             </div>
         </div>
     );
