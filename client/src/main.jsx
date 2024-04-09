@@ -1,30 +1,37 @@
 import ReactDOM from 'react-dom/client';
 import Landingpage from './pages/landingpage';
+import Explore from './pages/explore';
 import Subscription from "./pages/subscription";
 import Login from "./pages/login";
-import Signup from "./pages/signup";
-import Profile from './pages/profile';
+import EditProfile from './pages/profile';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from "./App";
 import '/src/style.css';
 import Auth from './utils/auth';
 import { Navigate } from 'react-router';
+import Signupform from './components/signupform';
 
 const router = createBrowserRouter([
     {
 
       path: '/',
-      element: Auth.loggedIn() ? <Navigate to='/profile' replace='true'/> : <App />,
+      element: 
+      // Auth.loggedIn() ? <Navigate to='/' replace='true'/> : 
+      <App />,
       children: [
         {
           index: true, 
           element: <Landingpage />
         },
         {
+          path: '/explore',
+          element: <Explore />
+        },
+        {
           path: '/profile',
           element: Auth.loggedIn() ? (
-            Auth.hasUser() ? (
-              <Profile />
+            // Auth.hasUser() ? (
+              <EditProfile />
               // Auth.hasPhoto() ? (
               //   <Profile />
               // ) : (
@@ -33,16 +40,16 @@ const router = createBrowserRouter([
             ) : (
               <Navigate to="/login" />
             )
-          ) : (
-            <Navigate to="/" />
-          )
+          // ) : (
+          //   <Navigate to="/" />
+          // )
         },
        {
           path: '/login',
           element: <Login />
         }, {
-          path: '/signup',
-          element: <Signup />
+          path: '/signupform',
+          element: <Signupform/>
         },{
             path: '/subscribe',
             element: <Subscription />

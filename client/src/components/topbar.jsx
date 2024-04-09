@@ -23,7 +23,7 @@ const Topbar = () => {
                 <AiFillPhone size={20} className='mr-2 text-[var(--primary-dark)]' />
                 <p className='text-sm text-gray-700'>561-147-8567</p>
             </div>
-            <Link to='/signup'>
+            <Link to='/signupform'>
             <button className='border rounded-md b bg-gray-700/80 text-white px-4 py-1'>Subscribe</button>
             </Link>
         </div>

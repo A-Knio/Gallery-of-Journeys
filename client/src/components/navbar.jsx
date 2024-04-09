@@ -12,16 +12,16 @@ const handleNav = () => {
     <div className='w-full min-h-[50px]  flex justify-between items-center absolute z-10 text-white bg-gray-700/60'>
         <ul className='hidden sm:flex px-4'>
             <li className='mx-4'>
-               <a href="/Home">Home</a> 
+               <a href="/">Home</a> 
             </li>
             <li className='mx-4'>
                <a href="#gallery">Gallery</a> 
             </li>
             <li className='mx-4'>
-               <a href="#profile">Profile</a> 
+               <a href="/profile">Profile</a> 
             </li>
             <li className='mx-4'>
-               <a href="#explore">Explore</a> 
+               <a href="/explore">Explore</a> 
             </li>
         </ul>
         <div className='flex justify-between'>

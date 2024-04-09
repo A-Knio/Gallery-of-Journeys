@@ -1,28 +1,34 @@
 import { useQuery } from '@apollo/client'
 import React from 'react'
 import AuthService from '../utils/auth';
-import { QUERY_USER, QUERY_ALLPHOTOS } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 // import RequestSignIn from './partials/RequestSignIn';
-import { redirect } from 'react-router-dom';
 
-const Profile = () => {
+const EditProfile = () => {
     const profileData = AuthService.getProfile().data;
-  
-    const { data: userData, loading: userLoading, error: userError } = useQuery(QUERY_USER);
-    const { data: photoData, loading: photoLoading, error: photoError } = useQuery(QUERY_ALLPHOTOS, {
+  console.log(profileData)
+    const { data: userData, loading: userLoading, error: userError } = useQuery(QUERY_ME, {
+      
       variables: {
-        id: profileData.photoId
+        id: profileData.me
       }
     });
+    // const { data: photoData, loading: photoLoading, error: photoError } = useQuery(QUERY_ALLPHOTOS, {
+    //   variables: {
+    //     id: profileData.photoId
+    //   }
+    // });
 
-    if (userLoading || photoLoading) return <p className='text-center my-5'>Loading User Data...</p>;
+    if (userLoading ) return <p className='text-center my-5'>Loading User Data...</p>;
 
     if (userError) return <p className='text-center my-5'>Error loading User Data: <em>{userError.message}</em></p>;
 
-    const { user } = userData.me;
-    const { photo } = photoData
+    const  user  = userData.me;
+    console.log(user);
+    console.log(userData);
+    // const { photo } = photoData
 
-    if (photoError) return <p className='text-center my-5'>Error loading Company Data: <em>{companyError.message}</em></p>;
+    // if (photoError) return <p className='text-center my-5'>Error loading Company Data: <em>{companyError.message}</em></p>;
 
     return (<div className="container my-5">
         <h2>Account Info</h2>
@@ -39,4 +45,4 @@ const Profile = () => {
 }
 
 
-export default Profile;
+export default EditProfile;

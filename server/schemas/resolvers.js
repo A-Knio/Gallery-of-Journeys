@@ -8,11 +8,12 @@ const resolvers = {
             return User.find();
         },
         user: async (parent, { username }) => {
-            return User.findOne({ username }).populate('photos')
+            return User.findOne({ username })
         },
         me: async (parent, args, context) => {
+           console.log("ello")
             if (context.user) {
-                return User.findOne({ _id: context.user._id }).populate('photos');
+                return User.findOne({ _id: context.user._id })
             }
             throw new AuthenticationError('You need to be logged in!');
         },

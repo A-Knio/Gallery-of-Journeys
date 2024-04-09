@@ -1,16 +1,18 @@
 
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode, InvalidTokenError } from "jwt-decode";
+
 class AuthService{
 
   getToken() {
     return localStorage.getItem('id_token');
   }
 
-  getProfile() {
+getProfile() {
+  const token = this.getToken()
     if (typeof token !== 'string' || token === '') {
       throw new InvalidTokenError('Token is missing or invalid');
     }
-    return jwtDecode(this.getToken());
+    return jwtDecode(token);
 
   }
   loggedIn() {

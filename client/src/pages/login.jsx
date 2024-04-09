@@ -11,11 +11,12 @@ function Login (props) {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         try {
-            const mutationResponse = await login({
+            const {data} = await login({
             variables: { email: formState.email, password: formState.password },
         });
-            const token = mutationResponse.data.login.token;
-            Auth.login(token);
+            // const token = mutationResponse.data.login.token;
+            // console.log(token)
+            Auth.login(data.login.token);
         } catch (e) {
             console.log(e);
         }
@@ -70,8 +71,9 @@ function Login (props) {
                             </button>
 
                             <p className="py-8">
-                                <span className="text-gray-600"> Want to be a member? </span>
-                                <Link to='/signup'> Click Here to Register</Link>
+                                <span className="text-gray-400"> Want to be a member? </span>
+                                <Link to='/signupform'> Click Here to Register</Link>
+
                             </p>
                         </form>
 

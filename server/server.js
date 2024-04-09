@@ -15,7 +15,7 @@ const server = new ApolloServer({
   resolvers,
 });
 
-app.use(upload.single('file'));
+// app.use(upload.single('file'));
 
 
 const startApolloServer = async () => {
