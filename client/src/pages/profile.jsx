@@ -3,6 +3,9 @@ import React from 'react';
 import AuthService from '../utils/auth';
 import { QUERY_ME } from '../utils/queries';
 import { Link } from 'react-router-dom';
+import PhotoGallery from '../components/photogallery';
+import Topbar from '../components/topbar';
+import Navbar from '../components/navbar';
 
 const Profile = () => {
     const profileData = AuthService.getProfile().data;
@@ -19,15 +22,44 @@ const Profile = () => {
     const user = userData.me;
 
     return (
-        <div className="container mx-auto p-4">
-            <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+
+        <div className="container mx-auto w-full ">
+            <Topbar />
+            <Navbar />
+            <div className="max-w-lg mt-20 mx-auto bg-white p-6 rounded-lg shadow-lg">
                 <h2 className="text-3xl font-semibold mb-4">Profile</h2>
                 <div className="mb-4">
-                    <h3 className="text-xl font-semibold mb-2">Username:</h3>
-                    <p className="text-gray-700">{user.username}</p>
+                    <h3 className="text-xl font-semibold mb-2">Hi {user.username} welcome back!</h3>
+                    <p className="text-gray-700"></p>
+                    <div>
+                      <h1 className='text-xl font-semibold mb-2 mt-7'>Your Bio:</h1>  
+                    </div>
+                <p className='text-gray-700 text-lg'>{user.bio}
+                    </p> 
+                    <div className='flex justify-between mt-10'>
+                    <p>Photos: 0
+                        </p>
+                        <p>
+                            Photos Brought: 0
+                        </p>
+                        <p>
+                            Photos Sold : 0
+                        </p>
+                        </div>      
                 </div>
-                <Link to="/editprofile" className="text-blue-500 hover:underline">Edit Profile</Link>
+                <div className='flex justify-between'>
+                <button>
+                <Link to="/editprofile" className="text-lime-700 hover:underline">Edit Profile</Link>
+                </button>
+                <button>
+                <Link to="/explore" className="text-lime-700 hover:underline">Post a Photo</Link>
+                </button>
+                <button>
+                <Link to="/photoform" className="text-lime-700 hover:underline">Edit Gallery</Link>
+                </button>
+                </div>
             </div>
+            <PhotoGallery />
         </div>
     );
 };

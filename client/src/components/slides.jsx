@@ -4,7 +4,7 @@ import {RxDotFilled} from 'react-icons/rx'
 function Slides()  {
     const slides =[
         {
-            url: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            url: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' 
         },
         {
             url: 'https://images.unsplash.com/photo-1461604516355-61bd391c793f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHRyYXZlbCUyMHBpY3R1cmVzfGVufDB8fDB8fHww'
@@ -39,7 +39,7 @@ const goToSlide = (slideIndex) => {
 }
 
   return(
-   <div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group'>
+   <div className='max-w-[1100px] h-[680px] w-full m-auto py-16 px-4 relative group'>
       <div style={{backgroundImage: `url(${slides[currentIndex].url})`}}
       className='w-full h-full rounded-2xl bg-center bg-cover duration-500'></div>
 {/* left arrow */}
