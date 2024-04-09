@@ -25,7 +25,7 @@ const userSchema = new Schema(
       type: String,
       default: ''
     },  
-    myPhotos: [Photo],
+    // myPhotos: [Photo],
   },
    {
     toJSON: {
