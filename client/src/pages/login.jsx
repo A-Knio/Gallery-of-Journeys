@@ -32,16 +32,17 @@ function Login (props) {
 
     return (
         <div className="w-full h-screen">
-            <img className="hidden sm:block absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1547623641-d2c56c03e2a7?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Background"></img>
-            <div className="fixed w-full px-4 py-4 z-50">
-                <div className="rounded max-w-[450px] h-[600px]  mx-auto bg-black/45 text-slate-200">
-                    <div className="max-w-[320px] mx-auto py-16">
+            <img className="hidden sm:block absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Background"></img>
+            <div className="fixed w-full px-4 py-20 z-50">
+                <div className="rounded max-w-[450px] h-[600px]  mx-auto bg-black/25 text-slate-200">
+                    <div className="max-w-[320px] mx-auto py-20">
+                        {/* <img src="http://localhost:3000/src/images/gjlogo.svg" className="opacity-40"></img> */}
                         <h1 className="text-center text-4xl font-semibold"> Login </h1>
 
                         <form onSubmit={handleFormSubmit} className="w-full flex flex-col py-4" action="">  
                             <label htmlFor="email" className="text-lg font-medium">Email</label>
                             <input 
-                                className="p-3 my-2 bg-stone-600"
+                                className="rounded p-3 my-2 bg-white-600"
                                 name="email" 
                                 placeholder="Enter your email"
                                 onChange={handleChange}
@@ -49,7 +50,7 @@ function Login (props) {
                             
                             <label htmlFor="password"  className="text-lg font-medium">Password</label>
                             <input 
-                                className="p-3 my-2 bg-stone-600" 
+                                className="rounded p-3 my-2 bg-white-600" 
                                 type="password"
                                 name="password"
                                 placeholder="******"
@@ -63,7 +64,7 @@ function Login (props) {
                             ) : null}
 
                             <button 
-                                className="bg-gray-900 py-3 my-6 rounded font-semibold" 
+                                className="bg-gray-600 py-3 my-6 rounded font-semibold" 
                                 type="submit"
                             > 
                                 Login 
@@ -72,6 +73,7 @@ function Login (props) {
                             <p className="py-8">
                                 <span className="text-gray-400"> Want to be a member? </span>
                                 <Link to='/signupform'> Click Here to Register</Link>
+
                             </p>
                         </form>
 
