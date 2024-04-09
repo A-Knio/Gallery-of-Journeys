@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.10",
+    "@lyket/react": "^2.1.0",
     "@types/jwt-decode": "^3.1.0",
     "bootstrap": "^5.3.3",
     "faker": "^5.5.3",

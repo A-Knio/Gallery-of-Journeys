@@ -26,14 +26,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        {/* <Topbar />
-        <Navbar />
-        <Hero />
-        <Homegallery />
-        <FeaturesSection />
-        <Gallery />
-        <Footer /> */}
-        {/* <Landingpage /> */}
         <Outlet />
       </div>
     </ApolloProvider>

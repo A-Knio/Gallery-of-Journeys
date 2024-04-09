@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function App() {
+export default function Photoform() {
   return (
       <div className="mb-3 w-96">
           <label

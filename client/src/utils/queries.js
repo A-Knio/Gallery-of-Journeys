@@ -60,23 +60,22 @@ export const QUERY_ALLPHOTOS = gql`
     }`;
 
 export const QUERY_ME = gql`
-  query Me($userId: ID!) {
-    user(id: $userId) {
+query Query {
+    me {
       _id
       username
       email
       myPhotos {
         _id
-        title
+        contentType
         description
+        favorited
         image
         link
         purchased
-        favorited
         sold
-        data
-        contentType
+        title
       }
     }
-  }
+  }  
 `;
