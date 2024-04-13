@@ -15,7 +15,7 @@ Gallery of Journeys, Where Every Picture Tells a Tale
 
 A subscription service where users can buy photos from photographers of different places or landmarks in various cities and countries. (The creators of the website would get 10% of every sale)
 
-![HomePage](<Screen Shot 2024-04-08 at 9.37.25 PM.png>)
+[HomePage](<ScreenShot.png>)
 
 ## User Story
 As a user, I want to sell photos of my travels to potential buyers.
